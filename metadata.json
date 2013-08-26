@@ -1,0 +1,13 @@
+{
+  "name": "mjhas-clamav",
+  "version": "0.0.1",
+  "summary": "",
+  "author": "mjhas",
+  "description": "This Clamav Module installs clamav",
+  "dependencies": [],
+  "types": [],
+  "checksums": {},
+  "source": "https://github.com/mjhas/clamav.git",
+  "project_page": "https://github.com/mjhas/clamav",
+  "license": "Apache License 2.0"
+}
