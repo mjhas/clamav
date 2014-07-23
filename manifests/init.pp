@@ -12,12 +12,12 @@ class clamav(
     ensure  => running,
     require => Package['clamav-daemon']
   }
-  if defined(Package['amavis']){
+  if defined(Package['amavisd-new']){
     user {'clamav':
       ensure  => present,
       gid     => 'clamav',
       groups  => ['amavis'],
-      require => Package['clamav-daemon','amavis']
+      require => Package['clamav-daemon','amavisd-new']
     } 
   }
   service {'clamav-freshclam':
