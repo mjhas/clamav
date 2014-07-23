@@ -1,5 +1,7 @@
+▽
 class clamav(
   $milter=false,
+  $amavis=true,
 ) {
   package {'clamav-daemon':
     ensure  => latest
@@ -12,13 +14,14 @@ class clamav(
     ensure  => running,
     require => Package['clamav-daemon']
   }
-  if defined(Package['amavisd-new']){
+  if $amavis {
     user {'clamav':
       ensure  => present,
       gid     => 'clamav',
       groups  => ['amavis'],
-      require => Package['clamav-daemon','amavisd-new']
-    } 
+      require => Package['clamav-daemon','amavisd-new'],
+      notify  => Service['clamav-daemon'],
+    }
   }
   service {'clamav-freshclam':
     ensure  => running,
