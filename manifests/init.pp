@@ -1,4 +1,3 @@
-▽
 class clamav(
   $milter=false,
   $amavis=true,
