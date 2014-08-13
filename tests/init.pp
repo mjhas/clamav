@@ -1,1 +1,3 @@
-include clamav
+class { 'clamav':
+  amavis => false,
+}

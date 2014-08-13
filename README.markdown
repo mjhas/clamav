@@ -12,3 +12,7 @@ Simplest Configuration:
 
 
 It will just install the clamav package and ensure that clamav is running.
+
+## Contributors
+
+[nerdlich](https://github.com/nerdlich)
