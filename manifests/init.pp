@@ -14,6 +14,9 @@ class clamav(
     require => Package['clamav-daemon']
   }
   if $amavis {
+    package { 'amavisd-new':
+      ensure  => latest,
+    }
     user {'clamav':
       ensure  => present,
       gid     => 'clamav',
